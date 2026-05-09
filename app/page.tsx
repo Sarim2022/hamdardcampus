@@ -27,62 +27,61 @@ export default function Home() {
           className="fixed inset-0 z-50 flex flex-col items-center justify-between bg-white py-12 px-6"
         >
           {/* Top Section: Branding & Scattered Tags */}
-          <div className="flex flex-col items-center mt-12 relative w-full max-w-sm h-[340px] justify-center">
+          <div className="flex flex-col items-center mt-6 relative w-full max-w-sm h-[380px] justify-center">
             
-            {/* Floating Tags Section */}
+            {/* Floating Tags Section - Focused on Top White Area */}
             <div className="absolute inset-0 pointer-events-none">
               
-              {/* --- NEW TOP TAGS --- */}
+              {/* --- TOP ROW CHIPS (In the white area) --- */}
               <motion.div 
-                initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.4 }}
-                className="absolute top-[2%] left-[25%] bg-slate-50 text-slate-400 px-3 py-1 rounded-full text-[10px] font-bold rotate-6 border border-slate-100"
+                initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
+                className="absolute top-[-10%] left-[5%] bg-slate-50 text-slate-400 px-3 py-1.5 rounded-full text-[10px] font-bold rotate-[-8deg] border border-slate-100 shadow-sm"
+              >
+                #Events
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
+                className="absolute top-[-15%] left-[35%] bg-slate-50 text-slate-400 px-3 py-1.5 rounded-full text-[10px] font-bold rotate-3 border border-slate-100"
               >
                 #Academics
               </motion.div>
 
               <motion.div 
-                initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.5 }}
-                className="absolute top-[0%] right-[20%] bg-indigo-50/50 text-indigo-300 px-3 py-1 rounded-full text-[10px] font-bold -rotate-12"
+                initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.0 }}
+                className="absolute top-[-12%] right-[10%] bg-indigo-50/50 text-indigo-300 px-4 py-1.5 rounded-full text-[10px] font-bold -rotate-6 border border-indigo-100/30"
               >
                 #Exams
               </motion.div>
 
-              {/* --- FIXED EXISTING TAGS --- */}
+              <motion.div 
+                initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }}
+                className="absolute top-[5%] right-[25%] bg-white text-slate-500 border border-slate-200 px-4 py-1.5 rounded-full text-[10px] font-bold rotate-12 shadow-sm"
+              >
+                #Campus Tour
+              </motion.div>
+
+              {/* --- MID SECTION BOLD CHIPS --- */}
               <motion.div 
                 initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}
-                className="absolute top-[18%] left-[2%] bg-black text-white px-4 py-2 rounded-full text-xs font-bold -rotate-12 shadow-lg"
+                className="absolute top-[20%] left-[-2%] bg-black text-white px-5 py-2 rounded-full text-xs font-bold -rotate-12 shadow-xl"
               >
                 #Assignment
               </motion.div>
 
               <motion.div 
                 initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }}
-                className="absolute top-[22%] right-[2%] bg-black text-white px-4 py-2 rounded-full text-xs font-bold rotate-12 shadow-lg"
+                className="absolute top-[25%] right-[-2%] bg-black text-white px-5 py-2 rounded-full text-xs font-bold rotate-12 shadow-xl"
               >
                 #Lost & Found 
               </motion.div>
 
+              {/* --- SIDE CHIP --- */}
               <motion.div 
-                initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.9 }}
-                className="absolute top-[55%] left-[-5%] bg-white text-slate-800 border border-slate-100 px-4 py-2 rounded-full text-xs font-bold rotate-6 shadow-md"
-              >
-                #Events 
-              </motion.div>
-
-              {/* Fixed: Moved further right and tilted more to avoid overlapping logo */}
-              <motion.div 
-                initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3 }}
-                className="absolute top-[45%] right-[-2%] bg-white text-indigo-600 border border-indigo-50 px-3 py-1.5 rounded-full text-[10px] font-bold rotate-12 shadow-sm"
+                initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.3 }}
+                className="absolute bottom-[25%] right-[2%] bg-white text-indigo-600 border border-indigo-50 px-3 py-1.5 rounded-full text-[10px] font-bold rotate-[-10deg] shadow-sm"
               >
                 #Chats 
-              </motion.div>
-
-              {/* Fixed: Moved down significantly so it never touches the university name */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }}
-                className="absolute bottom-[2%] left-[28%] bg-white text-slate-800 border border-slate-200 px-5 py-2 rounded-full text-[11px] font-bold -rotate-2 shadow-md"
-              >
-                #Campus Tour
               </motion.div>
             </div>
 
@@ -93,10 +92,10 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="relative z-10"
             >
-              <div className="flex h-24 w-24 items-center justify-center rounded-[2rem] bg-indigo-600 shadow-2xl shadow-indigo-200">
+              <div className="flex h-24 w-24 items-center justify-center rounded-[2.2rem] bg-indigo-600 shadow-2xl shadow-indigo-200">
                 <GraduationCap className="h-12 w-12 text-white" />
               </div>
-              <div className="absolute inset-0 animate-ping rounded-[2rem] bg-indigo-400 opacity-10" />
+              <div className="absolute inset-0 animate-ping rounded-[2.2rem] bg-indigo-400 opacity-10" />
             </motion.div>
 
             {/* Text Branding */}
@@ -151,7 +150,7 @@ export default function Home() {
 
             <Button 
               variant="ghost"
-              className="w-full h-14 rounded-full bg-slate-50 hover:bg-slate-100 text-[#5D53D6] font-serif font-medium transition-colors border border-transparent hover:border-slate-200"
+              className="w-full h-14 rounded-full bg-slate-50 hover:bg-slate-100 text-[#5D53D6] font-serif font-medium transition-colors border border-transparent hover:border-slate-200 mt-2"
               onClick={() => window.open('https://your-link-here.com', '_blank')}
             >
               Connect with us
