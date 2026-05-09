@@ -24,16 +24,74 @@ export default function Home() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.5 }}
-          // "justify-between" pushes the top div and bottom div apart
           className="fixed inset-0 z-50 flex flex-col items-center justify-between bg-white py-12 px-6"
         >
-          {/* Top Section: Branding */}
-          <div className="flex flex-col items-center mt-16">
+          {/* Top Section: Branding & Scattered Tags */}
+          <div className="flex flex-col items-center mt-12 relative w-full max-w-sm h-[340px] justify-center">
+            
+            {/* Floating Tags Section */}
+            <div className="absolute inset-0 pointer-events-none">
+              
+              {/* --- NEW TOP TAGS --- */}
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.4 }}
+                className="absolute top-[2%] left-[25%] bg-slate-50 text-slate-400 px-3 py-1 rounded-full text-[10px] font-bold rotate-6 border border-slate-100"
+              >
+                #Academics
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.5 }}
+                className="absolute top-[0%] right-[20%] bg-indigo-50/50 text-indigo-300 px-3 py-1 rounded-full text-[10px] font-bold -rotate-12"
+              >
+                #Exams
+              </motion.div>
+
+              {/* --- FIXED EXISTING TAGS --- */}
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}
+                className="absolute top-[18%] left-[2%] bg-black text-white px-4 py-2 rounded-full text-xs font-bold -rotate-12 shadow-lg"
+              >
+                #Assignment
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }}
+                className="absolute top-[22%] right-[2%] bg-black text-white px-4 py-2 rounded-full text-xs font-bold rotate-12 shadow-lg"
+              >
+                #Lost & Found 
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.9 }}
+                className="absolute top-[55%] left-[-5%] bg-white text-slate-800 border border-slate-100 px-4 py-2 rounded-full text-xs font-bold rotate-6 shadow-md"
+              >
+                #Events 
+              </motion.div>
+
+              {/* Fixed: Moved further right and tilted more to avoid overlapping logo */}
+              <motion.div 
+                initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3 }}
+                className="absolute top-[45%] right-[-2%] bg-white text-indigo-600 border border-indigo-50 px-3 py-1.5 rounded-full text-[10px] font-bold rotate-12 shadow-sm"
+              >
+                #Chats 
+              </motion.div>
+
+              {/* Fixed: Moved down significantly so it never touches the university name */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }}
+                className="absolute bottom-[2%] left-[28%] bg-white text-slate-800 border border-slate-200 px-5 py-2 rounded-full text-[11px] font-bold -rotate-2 shadow-md"
+              >
+                #Campus Tour
+              </motion.div>
+            </div>
+
+            {/* Main Center Icon */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative mb-8"
+              className="relative z-10"
             >
               <div className="flex h-24 w-24 items-center justify-center rounded-[2rem] bg-indigo-600 shadow-2xl shadow-indigo-200">
                 <GraduationCap className="h-12 w-12 text-white" />
@@ -41,44 +99,46 @@ export default function Home() {
               <div className="absolute inset-0 animate-ping rounded-[2rem] bg-indigo-400 opacity-10" />
             </motion.div>
 
-            <motion.h1 
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="text-4xl font-bold tracking-tight text-slate-900"
-            >
-              Hamdard<span className="text-indigo-600">Campus</span>
-            </motion.h1>
+            {/* Text Branding */}
+            <div className="mt-12 text-center z-10">
+              <motion.h1 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="text-4xl font-bold tracking-tight text-slate-900"
+              >
+                Hamdard<span className="text-indigo-600">Campus</span>
+              </motion.h1>
 
-            <div className="mt-3 flex overflow-hidden">
-              {"Jamia Hamdard University".split("").map((char, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.6 + index * 0.04 }}
-                  className="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-400/80"
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
+              <div className="mt-3 flex justify-center overflow-hidden">
+                {"Jamia Hamdard University".split("").map((char, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.6 + index * 0.04 }}
+                    className="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-400/80"
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Bottom Section: Action (Everything here is aligned to bottom) */}
+          {/* Bottom Section: Action */}
           <motion.div 
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.6 }}
-            className="w-full max-w-xs flex flex-col items-center gap-3"
+            className="w-full max-w-xs flex flex-col items-center gap-3 mb-4"
           >
-            <div className="text-center px-2 mb-4">
-              <p className="text-slate-300 text-[14px] leading-relaxed" style={{ fontFamily: 'Arial, sans-serif' }}>
+            <div className="text-center px-4 mb-4">
+              <p className="text-slate-500 text-[15px] leading-relaxed font-serif italic">
                 Your digital campus companion for academics, marketplace, and community—everything in one place.
               </p>
             </div>
 
-            {/* Main Action Button */}
             <Button 
               onClick={handleGetStarted}
               className="w-full h-16 rounded-full bg-[#5D53D6] hover:bg-[#4c44b5] text-white px-8 shadow-xl shadow-indigo-100 flex items-center justify-between group transition-all"
@@ -89,16 +149,15 @@ export default function Home() {
               </div>
             </Button>
 
-            {/* Connect Button */}
             <Button 
               variant="ghost"
-              className="w-full h-14 rounded-full bg-slate-100 hover:bg-slate-200 text-[#5D53D6] font-serif font-medium transition-colors"
+              className="w-full h-14 rounded-full bg-slate-50 hover:bg-slate-100 text-[#5D53D6] font-serif font-medium transition-colors border border-transparent hover:border-slate-200"
               onClick={() => window.open('https://your-link-here.com', '_blank')}
             >
               Connect with us
             </Button>
             
-            <p className="mt-4 text-[10px] text-slate-400  tracking-[0.2em] style={{ fontFamily: 'Arial, sans-serif' }}">
+            <p className="mt-6 text-[10px] text-slate-400 tracking-[0.2em] font-sans font-bold">
               VERSION 1.0.0
             </p>
           </motion.div>
