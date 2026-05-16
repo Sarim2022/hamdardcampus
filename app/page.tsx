@@ -13,7 +13,7 @@ export default function Home() {
   const handleGetStarted = () => {
     setIsExiting(true);
     setTimeout(() => {
-      router.push("/onboarding");
+      router.push("/home");
     }, 500);
   };
 
@@ -133,7 +133,7 @@ export default function Home() {
             className="w-full max-w-xs flex flex-col items-center gap-3 mb-4"
           >
             <div className="text-center px-4 mb-4">
-              <p className="text-slate-500 text-[15px] leading-relaxed font-serif italic">
+              <p className="text-slate-500 text-[15px] leading-relaxed italic">
                 Your digital campus companion for academics, marketplace, and community—everything in one place.
               </p>
             </div>
@@ -142,7 +142,7 @@ export default function Home() {
               onClick={handleGetStarted}
               className="w-full h-16 rounded-full bg-[#5D53D6] hover:bg-[#4c44b5] text-white px-8 shadow-xl shadow-indigo-100 flex items-center justify-between group transition-all"
             >
-              <span className="text-lg font-semibold font-serif">Get Started</span>
+              <span className="text-lg font-semibold">Get Started</span>
               <div className="bg-white/20 p-2 rounded-full">
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </div>
@@ -150,13 +150,13 @@ export default function Home() {
 
             <Button 
               variant="ghost"
-              className="w-full h-14 rounded-full bg-slate-50 hover:bg-slate-100 text-[#5D53D6] font-serif font-medium transition-colors border border-transparent hover:border-slate-200 mt-2"
+              className="w-full h-14 rounded-full bg-slate-50 hover:bg-slate-100 text-[#5D53D6] font-medium transition-colors border border-transparent hover:border-slate-200 mt-2"
               onClick={() => window.open('https://your-link-here.com', '_blank')}
             >
               Connect with us
             </Button>
             
-            <p className="mt-6 text-[10px] text-slate-400 tracking-[0.2em] font-sans font-bold">
+            <p className="mt-6 text-[10px] text-slate-400 tracking-[0.2em] font-bold">
               VERSION 1.0.0
             </p>
           </motion.div>
